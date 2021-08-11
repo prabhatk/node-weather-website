@@ -12,12 +12,13 @@ const forecast = (lat, long, callback) => {
             const currently = body.current.temperature
             const feelsLike = body.current.feelslike
             const description = body.current.weather_descriptions[0]
-            // console.log()
+            const humidity = body.current.humidity
+            console.log(body)
             const data = {
                 description : description,
                 currently : currently,
                 feelsLike : feelsLike, 
-                summary : description + '. Its currently ' + currently + 'F degrees out. It feels like ' + feelsLike + 'F degres out.'
+                summary : description + '. Its currently ' + currently + 'F degrees out. It feels like ' + feelsLike + 'F degres out. Humidity will be ' + humidity + "."
             }
             callback(undefined, data)
         }
